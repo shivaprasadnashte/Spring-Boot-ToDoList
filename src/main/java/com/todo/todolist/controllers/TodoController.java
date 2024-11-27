@@ -23,6 +23,11 @@ public class TodoController {
     @Lazy
     private TodoService todoService;
 
+    @GetMapping("/")
+    public String home() {
+        return "Welcome to the Todo List API!";
+    }
+
     @GetMapping("/todos")
     public List<Todo> getTodos() {
         return this.todoService.getAllTodos();
